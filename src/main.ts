@@ -3,5 +3,5 @@ import { AppRoutingModule } from './app/app-routing.module';
 import { AppModule } from './app/app.module';
 
 
-platformBrowserDynamic().bootstrapModule(AppRoutingModule)
+platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));

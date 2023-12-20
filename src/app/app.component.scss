@@ -1,0 +1,10 @@
+.page-container {
+    display: flex;
+    // flex-direction: column;
+    min-height: 100vh;
+}
+
+.margin-1 {
+    margin: 2rem;
+    flex-grow: 1;
+}

@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './views/login/login.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './views/home/home.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, type Routes } from '@angular/router';
