@@ -1,0 +1,111 @@
+<div class="upload-section">
+  <h2>Desde un PDF</h2>
+  
+  <input type="file" class="file-input" (change)="onChange($event)" #fileUpload />
+  
+  <div *ngIf="file">
+    <section class="file-info">
+      File details:
+      <ul>
+        <li>Name: {{file.name}}</li>
+        <li>Type: {{file.type}}</li>
+        <li>Size: {{file.size}} bytes</li>
+      </ul>
+    </section>
+    
+    <button (click)="onUpload()">Subir archivo</button>
+    
+    <section [ngSwitch]="status">
+      <p *ngSwitchCase="'uploading'">⏳ Subiendo...</p>
+      <p *ngSwitchCase="'success'">✅ Listo!</p>
+      <p *ngSwitchCase="'fail'">❌ Error!</p>
+      <p *ngSwitchDefault>Haga click para subir archivo.</p>
+    </section>
+  </div>
+</div>
+  
+<!-- <h2>Manualmente</h2> -->
+
+<!-- <form [formGroup]="formData" (submit)="onSubmit()">
+  <div class="inputs">
+    <div class="input-with-error-message-container">
+      <div class="input-container">
+        <label for="email-input">Correo</label>
+        <input
+          id="email-input"
+          type="email"
+          formControlName="email"
+          [attr.aria-invalid]="email.touched && email.invalid"
+          required
+        />
+      </div>
+    </div>
+  </div>
+  <button
+      class="submit-button"
+      type="submit"
+      aria-live="polite"
+      [disabled]="isSubmittingForm"
+    >
+      <ng-container *ngIf="!isSubmittingForm">Entrar</ng-container>
+
+    </button>
+</form> -->
+
+<!-- <ng-container *ngIf="isSubmittingForm">
+  <fa-icon class="rotate-infinite" [icon]="faSpinner"></fa-icon>
+</ng-container> -->
+
+<div
+  *ngIf="extracted_results">
+  <h1>Documento: {{extracted_results.general?.nombre}}</h1>
+  <div>
+    <ul>
+      
+      <li>tipo: {{extracted_results.general?.tipo}}</li>
+      <li>area: {{extracted_results.general?.area}}</li>
+      <li>notaria: {{extracted_results.general?.notaria}}</li>
+      <li>paginas: {{extracted_results.general?.paginas}}</li>
+      <li>repertorio: {{extracted_results.general?.repertorio}}</li>
+    </ul>
+
+  </div>
+
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Descripcion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let date of extracted_results.fechas">
+          <td>{{date.fecha}}</td>
+          <td>{{date.contexto}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>nombre</th>
+          <th>rut</th>
+          <th>tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of extracted_results.personas">
+          <td>{{person.nombre_completo}}</td>
+          <td>{{person.rut}}</td>
+          <td>{{person.tipo}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

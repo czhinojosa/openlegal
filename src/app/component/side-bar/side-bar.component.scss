@@ -1,0 +1,23 @@
+.sidebar-container {
+    height: 100%;
+    width: 250px;
+    background-color: #bcbcbc;
+}
+
+.sidebar__icon {
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 6/5;
+
+    background-color: #ffb3b3;
+    cursor: pointer;
+
+    & img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.sidebar__sections {
+    margin: 1.5rem;
+}

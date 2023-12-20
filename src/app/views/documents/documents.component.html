@@ -1,0 +1,32 @@
+<h1>Documentos</h1>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let document of documents">
+              <td>{{document.name}}</td>
+              <td>{{document.date}}</td>
+              <td>
+                <a href="{{document.url}}" target="_blank">
+                  <button class="btn btn-primary">Ver</button>
+                </a>
+                <button class="btn btn-danger" (click)="deleteDocument(document.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
